@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+    <h1>Product Review Page</h1>
+
+    <article class="media content-section">
+	  <div class="media-body">
+	   <table cellspacing="0">
+      <tr>
+         <th>Product_you_Searched</th>
+          <th width="70">Search_Result</th>
+         <th>Rating</th>
+         <th width="230">Review</th>
+		  <th>User_Name</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['Product_you_Searched']}}</td>
+          <td>{{review['Search_Result']}}</td>
+         <td>{{review['Rating']}}</td>
+          <td>{{review['Review']}} </td>
+		  <td>{{review['User_Name']}}</td>
+
+
+       {% endfor %}
+   </table>
+	  </div>
+	</article>
+
+
+{% endblock content %}
+
+
